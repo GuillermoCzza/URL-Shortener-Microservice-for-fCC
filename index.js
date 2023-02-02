@@ -5,7 +5,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 // Basic Configuration
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 app.use(cors());
 
@@ -16,7 +16,7 @@ app.get('/', function(req, res) {
 });
 
 //connect to MongoDB and setup the url model
-const MONGO_URI = process.env['MONGO_URI'];
+const MONGO_URI = process.env.MONGO_URI;
 mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 let urlSchema = new mongoose.Schema({
