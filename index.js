@@ -72,7 +72,7 @@ app.use("/api/shorturl", bodyParser.urlencoded({extended: false}))
       return;
     }
 
-    //if originalurl ends in a "/", remove it to having more than one entry for the same URL
+    //if originalurl ends in a "/", remove it to avoid having more than one entry for the same URL
     if(originalurl.charAt(originalurl.length - 1) == "/"){
       originalurl = originalurl.slice(0, -1);
     }
